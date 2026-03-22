@@ -1,0 +1,150 @@
+{
+  "Devices": [
+    {
+      "Type": "Laptop",
+      "Id": "278f0732-81eb-4404-8fdf-73374ec51a3c",
+      "Name": "Dell XPS 15",
+      "Status": "Unavailable",
+      "Processor": "Intel Core i9-13900H",
+      "Ram": 32768,
+      "GraphicsCard": "NVIDIA RTX 4060",
+      "Resolution": null,
+      "Lumens": null,
+      "MegaPixels": null,
+      "BatteryLifeShots": null
+    },
+    {
+      "Type": "Laptop",
+      "Id": "5c828374-06da-4c7b-9060-9b366048970e",
+      "Name": "MacBook Pro M3",
+      "Status": "Available",
+      "Processor": "Apple M3 Pro",
+      "Ram": 18432,
+      "GraphicsCard": "Apple M3 Pro GPU",
+      "Resolution": null,
+      "Lumens": null,
+      "MegaPixels": null,
+      "BatteryLifeShots": null
+    },
+    {
+      "Type": "Laptop",
+      "Id": "97e8fdcc-8adf-42f0-8dea-eed6558e68be",
+      "Name": "Lenovo ThinkPad X1",
+      "Status": "Available",
+      "Processor": "Intel Core i7-1365U",
+      "Ram": 16384,
+      "GraphicsCard": "Intel Iris Xe",
+      "Resolution": null,
+      "Lumens": null,
+      "MegaPixels": null,
+      "BatteryLifeShots": null
+    },
+    {
+      "Type": "Projector",
+      "Id": "c0f555dd-fec3-45a6-a8ba-64ee6f697b49",
+      "Name": "Epson EB-W51",
+      "Status": "Rented",
+      "Processor": null,
+      "Ram": null,
+      "GraphicsCard": null,
+      "Resolution": "WXGA 1280\u00D7800",
+      "Lumens": 3800,
+      "MegaPixels": null,
+      "BatteryLifeShots": null
+    },
+    {
+      "Type": "Projector",
+      "Id": "0959c079-e563-4178-90ba-73be45abb62c",
+      "Name": "BenQ MH560",
+      "Status": "Available",
+      "Processor": null,
+      "Ram": null,
+      "GraphicsCard": null,
+      "Resolution": "Full HD 1920\u00D71080",
+      "Lumens": 4000,
+      "MegaPixels": null,
+      "BatteryLifeShots": null
+    },
+    {
+      "Type": "Camera",
+      "Id": "f853a549-6e5a-4526-85d5-7e0d7ae0f669",
+      "Name": "Canon EOS R50",
+      "Status": "Available",
+      "Processor": null,
+      "Ram": null,
+      "GraphicsCard": null,
+      "Resolution": null,
+      "Lumens": null,
+      "MegaPixels": 24,
+      "BatteryLifeShots": 390
+    },
+    {
+      "Type": "Camera",
+      "Id": "97ba6bef-5007-4450-8fec-9d30f68d9d95",
+      "Name": "Sony Alpha A7 IV",
+      "Status": "Rented",
+      "Processor": null,
+      "Ram": null,
+      "GraphicsCard": null,
+      "Resolution": null,
+      "Lumens": null,
+      "MegaPixels": 33,
+      "BatteryLifeShots": 520
+    }
+  ],
+  "Users": [
+    {
+      "Type": "Student",
+      "Id": "658f9ab2-4029-41eb-bc54-943e49153931",
+      "FirstName": "Anna",
+      "LastName": "Kowalska"
+    },
+    {
+      "Type": "Student",
+      "Id": "04044b21-f090-48ce-839c-a388dccae45a",
+      "FirstName": "Piotr",
+      "LastName": "Nowak"
+    },
+    {
+      "Type": "Employee",
+      "Id": "6de3a48b-7738-4b6f-a5c7-f14f197404dc",
+      "FirstName": "Maria",
+      "LastName": "Wi\u015Bniewska"
+    },
+    {
+      "Type": "Employee",
+      "Id": "f0f33d07-aeef-4c3a-a35b-4c966d80b3d3",
+      "FirstName": "Tomasz",
+      "LastName": "Zaj\u0105c"
+    }
+  ],
+  "Rentals": [
+    {
+      "Id": "53aa3786-0cfe-47a8-9639-6f8fb1018d96",
+      "UserId": "658f9ab2-4029-41eb-bc54-943e49153931",
+      "DeviceId": "5c828374-06da-4c7b-9060-9b366048970e",
+      "StartDate": "2026-03-13T18:21:56.1117517+01:00",
+      "DueDate": "2026-03-19T18:21:56.1117517+01:00",
+      "ActualReturnDate": "2026-03-22T18:32:52.2162749+01:00",
+      "PenaltyAmount": 30.0
+    },
+    {
+      "Id": "e395e6fd-2b74-43aa-9b16-35be17c6c758",
+      "UserId": "658f9ab2-4029-41eb-bc54-943e49153931",
+      "DeviceId": "c0f555dd-fec3-45a6-a8ba-64ee6f697b49",
+      "StartDate": "2026-03-13T18:22:08.2907619+01:00",
+      "DueDate": "2026-03-20T18:22:08.2907619+01:00",
+      "ActualReturnDate": null,
+      "PenaltyAmount": 0
+    },
+    {
+      "Id": "c696b736-fd65-4984-bd8c-6c98aca4204f",
+      "UserId": "658f9ab2-4029-41eb-bc54-943e49153931",
+      "DeviceId": "97ba6bef-5007-4450-8fec-9d30f68d9d95",
+      "StartDate": "2026-03-22T18:34:00.4661198+01:00",
+      "DueDate": "2026-03-26T18:34:00.4661198+01:00",
+      "ActualReturnDate": null,
+      "PenaltyAmount": 0
+    }
+  ]
+}
