@@ -81,35 +81,7 @@ public class ConsoleMenu
                         break;
                 }
             }
-            catch (DeviceNotAvailableException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (DeviceNotFoundException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (InvalidRentalDaysException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (RentalAlreadyReturnedException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (RentalLimitExceededException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (RentalNotFoundException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (UnknownTypeException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (UserNotFoundException e)
+            catch (AppException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -174,7 +146,7 @@ public class ConsoleMenu
                 ReadLine("Enter the resolution: "),
                 ReadInt("Enter the brightness (in lumens): ")),
             "3" => new Camera(name,
-                ReadInt("Enter the megapixels count: "),
+                ReadDouble("Enter the megapixels count: "),
                 ReadInt("Enter the battery life (number of shots): ")),
             _ => throw new ArgumentException("Unknown type. Enter 1, 2 or 3")
         };
@@ -326,7 +298,21 @@ public class ConsoleMenu
 
     private int ReadInt(string prompt)
     {
-        var raw = ReadLine(prompt);
-        return int.TryParse(raw, out var v) ? v : 0;
+        while (true)
+        {
+            var raw = ReadLine(prompt);
+            if (int.TryParse(raw, out var v)) return v;
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
+    }
+
+    private double ReadDouble(string prompt)
+    {
+        while (true)
+        {
+            var raw = ReadLine(prompt);
+            if (double.TryParse(raw, out var v)) return v;
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
     }
 }

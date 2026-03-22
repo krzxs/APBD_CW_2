@@ -75,19 +75,19 @@ public class RentalService
         return _rentalRepository.GetAll();
     }
 
-    public List<Rental> GetAllActive()
+    public List<Rental> GetAllActive(string? userId = null)
     {
-        return _rentalRepository.GetAll().Where(r => r.IsActive() && !r.IsOverdue()).ToList();
+        return _rentalRepository.GetAll().Where(r => r.IsActive() && !r.IsOverdue() && (userId == null || r.User.Id == userId)).ToList();
     }
 
-    public List<Rental> GetAllOverdue()
+    public List<Rental> GetAllOverdue(string? userId = null)
     {
-        return _rentalRepository.GetAll().Where(r => r.IsOverdue()).ToList();
+        return _rentalRepository.GetAll().Where(r => r.IsOverdue() && (userId == null || r.User.Id == userId)).ToList();
     }
 
-    public List<Rental> GetAllCompleted()
+    public List<Rental> GetAllCompleted(string? userId = null)
     {
-        return _rentalRepository.GetAll().Where(r => !r.IsActive()).ToList();
+        return _rentalRepository.GetAll().Where(r => !r.IsActive() && (userId == null || r.User.Id == userId)).ToList();
     }
 
     public List<Rental> GetActiveByUser(string userId)

@@ -51,13 +51,13 @@ public class ReportService
         var rentals = _rentalService.GetAll();
         if (userId != null)
         {
-            rentals = rentals.Where(rental => rental.User.Id.Equals(userId)).ToList();
+            rentals = rentals.Where(r => r.User.Id == userId).ToList();
         }
         var filteredRentals = filter switch
         {
-            RentalFilter.Active => _rentalService.GetAllActive(),
-            RentalFilter.Overdue => _rentalService.GetAllOverdue(),
-            RentalFilter.Completed => _rentalService.GetAllCompleted(),
+            RentalFilter.Active => _rentalService.GetAllActive(userId),
+            RentalFilter.Overdue => _rentalService.GetAllOverdue(userId),
+            RentalFilter.Completed => _rentalService.GetAllCompleted(userId),
             _ => rentals
         };
 

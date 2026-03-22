@@ -51,11 +51,6 @@ public class Rental
 
     public void MarkReturned(DateTime returnDate, decimal penalty)
     {
-        if (!IsActive())
-        {
-            throw new RentalAlreadyReturnedException(Id);
-        }
-
         ActualReturnDate = returnDate;
         PenaltyAmount = penalty;
     }
