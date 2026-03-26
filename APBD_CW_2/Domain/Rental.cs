@@ -4,9 +4,8 @@ using APBD_CW_2.Exceptions;
 
 namespace APBD_CW_2.Domain;
 
-public class Rental
+public class Rental : BaseObject
 {
-    public string Id { get; }
     public User User { get; }
     public Device Device { get; }
     public DateTime StartDate { get; }
@@ -16,16 +15,14 @@ public class Rental
 
     public Rental(User user, Device device, DateTime startDate, int days)
     {
-        Id = Guid.NewGuid().ToString();
         User = user;
         Device = device;
         StartDate = startDate;
         DueDate = startDate.AddDays(days);
     }
 
-    private Rental(string id, User user, Device device, DateTime startDate, DateTime dueDate, DateTime? actualReturnDate, decimal penaltyAmount)
+    private Rental(string id, User user, Device device, DateTime startDate, DateTime dueDate, DateTime? actualReturnDate, decimal penaltyAmount) : base(id)
     {
-        Id = id;
         User = user;
         Device = device;
         StartDate = startDate;

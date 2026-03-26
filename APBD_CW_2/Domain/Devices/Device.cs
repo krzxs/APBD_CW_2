@@ -1,21 +1,18 @@
 ﻿namespace APBD_CW_2.Domain.Devices;
 
-public abstract class Device
+public abstract class Device : BaseObject
 {
-    public string Id { get; }
     public string Name { get; set; }
     public DeviceStatus Status { get; set; }
 
     protected Device(string name)
     {
-        Id = Guid.NewGuid().ToString();
         Name = name;
         Status = DeviceStatus.Available;
     }
 
-    protected Device(string id, string name, DeviceStatus status)
+    protected Device(string id, string name, DeviceStatus status) : base(id)
     {
-        Id = id;
         Name = name;
         Status = status;
     }

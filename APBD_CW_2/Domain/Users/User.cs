@@ -1,22 +1,19 @@
 ﻿namespace APBD_CW_2.Domain.Users;
 
-public abstract class User
+public abstract class User : BaseObject
 {
-    public string Id { get; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public abstract int RentalLimit { get; }
 
     protected User(string firstName, string lastName)
     {
-        Id = Guid.NewGuid().ToString();
         FirstName = firstName;
         LastName = lastName;
     }
 
-    protected User(string id, string firstName, string lastName)
+    protected User(string id, string firstName, string lastName) : base(id)
     {
-        Id = id;
         FirstName = firstName;
         LastName = lastName;
     }
