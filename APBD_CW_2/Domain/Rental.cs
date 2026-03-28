@@ -1,6 +1,5 @@
 ﻿using APBD_CW_2.Domain.Devices;
 using APBD_CW_2.Domain.Users;
-using APBD_CW_2.Exceptions;
 
 namespace APBD_CW_2.Domain;
 
@@ -8,8 +7,8 @@ public class Rental : BaseObject
 {
     public User User { get; }
     public Device Device { get; }
-    public DateTime StartDate { get; }
-    public DateTime DueDate { get; }
+    public DateTime StartDate { get; set; }
+    public DateTime DueDate { get; set; }
     public DateTime? ActualReturnDate { get; private set; }
     public decimal PenaltyAmount { get; private set; }
 
